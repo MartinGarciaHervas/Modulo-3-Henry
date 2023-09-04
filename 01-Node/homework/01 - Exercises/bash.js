@@ -7,7 +7,7 @@ function bash() {
    process.stdin.on("data", (data)=>{
       let args = String(data).trim();
       let cmd = args.split(' ')[0];
-      commands.hasOwnProperty(cmd)?commands[cmd](print, args.substring(5)):print(`command not found: ${cmd}`);
+      commands.hasOwnProperty(cmd)?commands[cmd](print, args.substring(cmd.length+1)):print(`command not found: ${cmd}`);
    })
 }
 
