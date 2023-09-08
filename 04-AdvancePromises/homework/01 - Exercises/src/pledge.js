@@ -9,14 +9,6 @@ function $Promise(executor) {
     
     this._state = 'pending';
 
-    const contexto = this
-    
-    const resolve = function(data){
-        contexto._state = 'fulfilled';
-        contexto._value = data;
-    }
-    const reject = function(){}
-
     executor(resolve, reject);
 }
 
